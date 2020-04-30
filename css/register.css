@@ -1,0 +1,137 @@
+.w{
+    width: 1200px;
+    margin: 0 auto;
+}
+.header{
+    
+    height: 95px;
+    border-bottom: 2px solid #b1191a;
+}
+.header .logo a{
+    display: block;
+    width: 277px;
+    height: 83px;
+    font-size: 0;
+    background: url('../images/logo1.png') no-repeat;
+}
+
+.main{
+    height: 522px;
+    border: 1px solid #ccc;
+    margin-top: 18px;
+}
+.main .nav{
+    height: 40px;
+    background: #e9ece9;
+    border-bottom: 1px solid #ccc;
+    
+}
+.main .nav .nav_hd{
+    float: left;
+    margin-left: 15px;
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: 400;
+}
+.main .nav .nav_bd{
+    float: right;
+    margin-right: 8px;
+    line-height: 40px;
+    font-size: 15px;
+}
+.main .nav .nav_bd a{
+    color: #b1191a;
+
+}
+
+.main .register_box{
+    width: 600px;
+    margin: 80px auto 0;
+    position: relative;
+}
+.main .register_box ul li #mark1{
+    position: absolute;
+    top: 0;
+    left: 350px;
+    height: 37px;
+    line-height: 37px;
+    
+}
+.main .register_box ul li #mark2{
+    position: absolute;
+    top: 56px;
+    left: 350px;
+    height: 37px;
+    line-height: 37px;
+    
+    
+}
+.main .register_box ul li #mark3{
+    position: absolute;
+    top: 113px;
+    left: 350px;
+    height: 37px;
+    line-height: 37px;
+   
+}
+.main .register_box ul li #mark4{
+    position: absolute;
+    top: 200px;
+    left: 350px;
+    height: 37px;
+    line-height: 37px;
+    
+    
+}
+.main .register_box ul li label{
+    display: inline-block;
+    width: 88px;
+    text-align: right;
+}
+.main .register_box ul li  input{
+    width: 242px;
+    height: 37px;
+    border: 1px solid #ccc;
+}
+.main .register_box ul li{
+    margin-bottom: 20px;
+}
+.main .register_box ul li .yan{
+    margin-left: 180px;
+    margin-top: 10px;
+}
+.main .register_box ul li .yan span{
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    background: #ccc;
+}
+.register_b{
+    margin-left: 390px;
+}
+
+.register_b span{
+    font-size: 14px;
+}
+.register_b span a{
+    color: #1ba1e6;
+    font-size: 14px;
+}
+.register_com{
+    display: block;
+    width: 252px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    background: #c81623;
+    font-size: 18px;
+    color: white;
+    margin-top: 20px;
+    margin-left: 375px;
+}
+.register_com:hover{
+    color: white;
+}
+

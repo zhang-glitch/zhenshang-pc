@@ -1,0 +1,310 @@
+ /* 版心 */
+ .w{
+     width: 1200px;
+     margin: 0 auto;
+ }
+ /* 快捷导航____________________________________________________________ */
+ .shortcut{
+     height: 31px;
+     background: #f1f1f1;
+     /* 会被继承 */
+     line-height: 31px;
+ }
+
+ .shortcut  ul li{
+     float: left;
+    }
+ .fr{
+     float: right;
+ }
+
+ .fl{
+     float: left;
+ }
+
+ /* 一般网站中都有很多颜色一样的字体 */
+ .style_red{
+     color:#c81623;
+ }
+
+/* 选择所有偶数的li */
+ .shortcut .fr ul li:nth-child(even){
+     width: 1px;
+     height: 12px;
+     background: #666666;
+     margin: 9px 12px;
+
+ }
+
+ /* 声明字体图标    注意路径*/
+ @font-face {
+    font-family: 'icomoon';
+    src:  url('../icomoon.eot?tomleg');
+    src:  url('../fonts/icomoon.eot?tomleg#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?tomleg') format('truetype'),
+      url('../fonts/icomoon.woff?tomleg') format('woff'),
+      url('../fonts/icomoon.svg?tomleg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+
+  /* 插入剪头 */
+ .arrow_icon::after{
+    font-family: 'icomoon';
+    /* 要加转义\ */
+    content: "\e91e";
+    margin-left: 3px;
+}
+
+/* header 头部 __________________________________________________________*/
+.header{
+    position: relative;
+    height: 105px;
+    
+}
+.logo{
+    position: absolute;
+    top: 10px;
+    width: 277px;
+    height: 83px;
+}
+.logo a{
+    display: block;
+    width: 277px;
+    height: 83px;
+    background: url(../images/logo1.png) no-repeat;
+    font-size: 0;
+}
+
+.search{
+    position: absolute;
+    left: 346px;
+    top: 25px;
+    width: 538px;
+    height: 36px;
+    border: 2px solid #b1191a;
+}
+.search input{
+    float: left;
+    width: 454px;
+    height:32px;
+    /* 此时不会增大宽度，应为用了box-sizing */
+    padding-left: 10px;
+}
+.search .btn{
+    float:left;
+    width: 80px;
+    height: 32px;
+    background:#b1191a;
+    font-size: 16px;
+    color: white;
+}
+/* hotwords制作  position定位不能嫁给a */
+.hotwords{
+    position: absolute;
+    top: 66px;
+    left: 346px;
+}
+.hotwords a{
+    margin: 0 10px;
+}
+/* 购物车制作 */
+.shopcar{
+    position: absolute;
+    right:60px;
+    top: 25px;
+    line-height: 35px;
+    text-align: center;
+    width: 140px;
+    height: 35px;
+    border: 1px solid #dfdfdf;
+    background:#f7f7f7;
+}
+.shopcar::after{
+    font-family: 'icomoon';
+    /* 要加转义\ */
+    content: "\e920";
+    margin-left: 10px;
+}
+.shopcar::before{
+    font-family: 'icomoon';
+    /* 要加转义\ */
+    content: "\e93a";
+    color: red;
+    margin-right: 10px;
+}
+.shopcar .count{
+    position: absolute;
+    /* 图标内容增多时，会让其偏移左边  ，因为用了right */
+    /* right: 20px; */
+    left: 105px;
+    top: -5px;
+    border-radius: 7px 7px 7px 0;
+    height: 14px;
+    line-height: 14px;
+    /* 注意不要固定宽度，要让内容将它撑开  ，写padding即可 */
+    padding: 0 5px;
+    background:red;
+    color: white;
+}
+
+/*  nav 制作_____________________________________________________________*/
+.nav{
+    height: 47px;
+    border-bottom:2px solid #b1191a;
+}
+.nav .dropdown{
+    float: left;
+    width: 210px;
+    height: 45px;
+    background: #b1191a;
+}
+.dropdown .dt{
+    /* width: 100%; */
+    /* height: 100%; */
+    color: #fff;
+    text-align: center;
+    line-height: 45px;
+    font-size: 16px;
+
+}
+.dropdown .dd{
+    /* width: 210px; */
+    height: 465px;
+    background: #c81623; 
+    margin-top: 2px;
+
+    /* display: none; */
+}
+.dropdown .dd ul li{
+    position: relative;
+    height: 31px;
+    line-height: 31px;
+    /* li标签与外边有距离 */
+    margin-left: 2px;
+    padding-left: 10px;
+}
+/* 插入右边的箭头 */
+.dropdown .dd ul li::after{
+    font-family: 'icomoon';
+    content: "\e920";
+    /* 不能用padding，因为文字不是一样的长度 */
+    /* padding-left: 40px; */
+    position: absolute;
+    right: 5px;
+    top: 1px;
+    color: white;
+    font-size: 14px;
+}
+.dropdown .dd ul li:hover{
+    background: white;
+    
+}
+.dropdown .dd ul li a{
+    font-size: 14px;
+    color: white;
+}
+/* 字体是a的  li里没有字体  所以不能加在li里 */
+.dropdown .dd ul li:hover a{
+    color: #c81623;
+}
+.nav .navitems{
+    float: left;
+    height: 45px;
+}
+.nav .navitems li{
+    float: left;
+}
+.nav .navitems li a{
+    display: block;
+    height: 45px;
+    line-height: 45px;
+    font-size: 16px;
+    /* 为了增大用户的点击体验   可以给a增加padding值 */
+    padding: 0 25px;
+}
+
+/* footer  尾部—————————————————————————————————————————————— */
+.footer{
+    height: 415px;
+    background: #f5f5f5;
+    padding-top: 30px;
+} 
+.footer .mod_service{
+    height: 80px;
+    border-bottom: 1px solid #ccc;
+}
+.footer .mod_service ul li{
+    width: 240px;
+    height: 50px;
+    float: left;
+    padding-left: 35px;
+}
+.footer .mod_service ul li span{
+    height: 50px;
+    width: 50px;
+    float: left;
+    margin-right: 6px;
+}
+.footer .mod_service ul li span img{
+    width: 100%;
+    height: 100%;
+}
+.footer .mod_service ul li div h4{
+    font-size: 14px;
+    padding-top: 3px;
+}
+.footer .mod_service ul li div p{
+    font-size: 12px;
+    padding-top: 3px;
+}
+.footer .mod_help{
+    height: 185px;
+    border-bottom: 1px solid #ccc;
+    padding-top: 20px;
+    padding-left: 50px;
+}
+.footer .mod_help dl dt{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.footer .mod_help dl{
+    float: left;
+    width: 200px;
+}
+.footer .mod_help dl:last-child{
+    width: 90px;
+    text-align: center;
+}
+.footer .mod_help dl img{
+    width: 90px;
+    height: 90px;
+}
+.mod_copyright{
+    padding-top: 20px;
+    /* padding-left: 0px; */
+    
+}
+.mod_copyright .links ul li{
+    float: left;
+    margin: 0 5px;
+
+}
+.mod_copyright .links ul li a{
+    font-size: 14px;
+}
+.mod_copyright .links ul li:nth-child(even){
+    width: 2px;
+    height: 18px;
+    background: #ded4cc;
+}
+.mod_copyright .links {
+    padding-bottom: 30px;
+}
+.mod_copyright .copy_right p{
+    
+    text-align: center;
+    /* height: 20px; */
+    line-height: 20px;
+}

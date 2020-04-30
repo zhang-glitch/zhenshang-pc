@@ -1,0 +1,93 @@
+{
+  "id": "1714405",
+  "name": "臻尚",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1841664",
+      "name": "电影",
+      "font_class": "dianying",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "2101902",
+      "name": "众筹",
+      "font_class": "zhongchou",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "3042299",
+      "name": " 火车票",
+      "font_class": "huochepiao",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "3858847",
+      "name": "游戏",
+      "font_class": "youxi",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "3859690",
+      "name": "飞机",
+      "font_class": "feiji",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "5065463",
+      "name": "手机",
+      "font_class": "shuangsechangyongtubiao-",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "5384866",
+      "name": "彩票",
+      "font_class": "caipiao",
+      "unicode": "e65d",
+      "unicode_decimal": 58973
+    },
+    {
+      "icon_id": "5564056",
+      "name": "理财",
+      "font_class": "licai-copy",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "11638566",
+      "name": "酒店",
+      "font_class": "jiudian",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "12307613",
+      "name": "加油卡",
+      "font_class": "jiayouka",
+      "unicode": "e67f",
+      "unicode_decimal": 59007
+    },
+    {
+      "icon_id": "13278992",
+      "name": "礼品卡",
+      "font_class": "lipinka",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "13397616",
+      "name": "白条",
+      "font_class": "baitiao",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    }
+  ]
+}

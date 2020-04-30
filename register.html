@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>臻尚-创新品质、唯有臻尚、给你不一样的感受</title>
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="css/init.css">
+
+    <link rel="stylesheet" href="css/common.css">
+
+    <link rel="stylesheet" href="css/register.css">
+    
+</head>
+<body>
+    <script>
+        window.onload = function(){
+            var oIp1 = document.getElementById("ip1");
+            var oIp2 = document.getElementById("ip2");
+            var oIp3 = document.getElementById("ip3");
+            var oIp4 = document.getElementById("ip4");
+            var oMark1 = document.getElementById("mark1");
+            var oMark2 = document.getElementById("mark2");
+            var oMark3 = document.getElementById("mark3");
+            var oMark4 = document.getElementById("mark4");
+            var oRegister = document.getElementById("register_box")
+            var oSpan = oRegister.getElementsByTagName("span")
+            oIp1.onblur = function(){
+                //检验手机号
+                var Ovalue1 = oIp1.value;
+                if(Ovalue1.length != 11){
+                    oMark1.innerHTML = "❗️长度应为11个字符";
+                    oMark1.style.color = "#b1191a";
+                }
+                else if(!/^1$/.test(Ovalue1[0])){
+                    oMark1.innerHTML = "❗️首位必须为1";
+                    oMark1.style.color = "#b1191a";
+                }else{
+                    oMark1.innerHTML = "✅";   
+                }
+            }     
+            // 检验验证码
+            oIp2.onblur = function(){
+                var Ovalue2 = oIp2.value;
+                if(Ovalue2.length != 5){
+                    oMark2.innerHTML = "❗️请输入正确验证码";
+                    oMark2.style.color = "#b1191a";
+                }
+                // else if(/^\d{5}$/.test(Ovalue2)){
+                //     oMark2.innerHTML = "❗️请输入正确验证码";
+                //     oMark2.style.color = "#b1191a";
+                // }
+                else{
+                    oMark2.innerHTML = "✅";  
+                }
+            }   
+                // 验证密码强度
+                //给密码框  添加键盘事件
+                //keydown事件触发的时间是  ，文本输入框之前  所以用keyup
+                // 密码强度归类：
+                //         1、弱  纯数字  纯小写  纯大写
+                //         2、中  两两混合
+                //         3、强  三种都有
+            oIp3.onkeyup = function(){
+                for(var i = 0; i < oSpan.length; i++){
+                    oSpan[i].style.backgroundColor = '#ccc';
+                    oSpan[i].style.color = 'black';
+                }
+                var Ovalue3 = oIp3.value;
+                if(Ovalue3.length >= 6){
+                    if(/^\d{6,30}$/.test(Ovalue3) || /^[a-z]{6,30}$/.test(Ovalue3) || /^[A-Z]{6,30}$/.test(Ovalue3)){
+                        oSpan[0].style.backgroundColor = 'red';
+                        oSpan[0].style.color = 'white';
+                        oMark3.innerHTML = "✅";
+                    }
+                    //多个if要小心   一定要加else
+                    else if(/^[0-9a-z]{6,30}$/.test(Ovalue3) || /^[0-9A-Z]{6,30}$/.test(Ovalue3) || /^[a-zA-Z]{6,30}$/.test(Ovalue3)){
+                        oSpan[1].style.backgroundColor = 'green';
+                        oSpan[1].style.color = 'white';
+                        oMark3.innerHTML = "✅";
+                    }
+                    else if(/^[0-9a-zA-Z]{6,30}$/.test(Ovalue3)){
+                        oSpan[2].style.backgroundColor = 'orange';
+                        oSpan[2].style.color = 'white';
+                        oMark3.innerHTML = "✅";
+                    }                                           
+                }  
+                else{
+                        oMark3.innerHTML = "❗️密码长度小于6位";
+                        oMark2.style.color = "#b1191a";
+                    }
+               
+            }
+            // 确认密码
+            oIp4.onkeyup = function(){
+                var Ovalue4 = oIp4.value;
+                var Ovalue3 = oIp3.value;
+                if(Ovalue4 == Ovalue3 && Ovalue4.length == Ovalue3.length){
+                    oMark4.innerHTML = "✅"; 
+                }else{
+                    oMark4.innerHTML = "❗️密码不一致"; 
+                    oMark2.style.color = "#b1191a";
+                }
+            }
+           
+        }
+    </script>
+    <!-- header    制作 -->
+    <div class="w header">
+        <div class="logo">
+            <h1>
+                <a href="index.html" title="臻尚">臻尚</a>
+            </h1>
+        </div>
+    </div>
+
+    <!-- 主体表单  制作 -->
+    <main class="w main">
+        <nav class="nav">
+            <div class="nav_hd">注册新用户</div>
+            <div class="nav_bd">
+                我有账号,去
+                <a href="index.html">登录</a>
+            </div>
+        </nav>
+        <div class="register_box" id="register_box">
+                <ul>
+                    <li>
+                        <label for="">手机号:</label>
+                        <input type="text" placeholder="请输入手机号" id="ip1">
+                        <div id="mark1"></div>  
+                    </li>
+                    <li>
+                        <label for="">短信验证码:</label>
+                        <input type="text" placeholder="请输入验证码" id="ip2">
+                        <div id="mark2"></div>
+                    </li>
+                    <li>
+                        <label for="">登录密码:</label>
+                        <input type="password" placeholder="请输入密码" id="ip3">
+                        <div id="mark3"></div>
+                        <div class="yan">
+                            <i>安全强度</i>
+                            <span>弱</span>
+                            <span>中</span>
+                            <span>强</span>
+                        </div>
+                    </li>
+                    <li>
+                        <label for="">确认密码:</label>
+                        <input type="password" placeholder="请输入密码" id="ip4">
+                        <div id="mark4"></div>
+                    </li>
+                </ul>
+        </div>
+        <div class="register_b ">
+            <input type="checkbox"> 
+            <span>
+                同意协议并注册 
+                <a href="#">《知晓用户协议》</a>
+            </span>
+        </div>
+        
+        <a href="index.html" class="register_com">完成注册</a>
+        
+    </main>
+
+    <!-- footer   尾部 -->
+    <footer class="footer">
+        <div class="w">
+            
+            <div class="mod_help">
+                <dl>
+                    <dt>购物指南</dt>
+                    <dd><a href="#">购物流程</a></dd>
+                    <dd><a href="#">会员介绍</a></dd>
+                    <dd><a href="#">生活旅行/团购</a></dd>
+                    <dd><a href="#">常见问题</a></dd>
+                    <dd><a href="#">大家电</a></dd>
+                    <dd><a href="#">联系客服</a></dd>
+                </dl>
+                <dl>
+                    <dt>配送方式</dt>
+                    <dd><a href="#">上门自提</a></dd>
+                    <dd><a href="#">211限时达</a></dd>
+                    <dd><a href="#">送服务查询</a>配</dd>
+                    <dd><a href="#">配送费收取标准</a></dd>
+                    <dd><a href="#">海外配送</a></dd>
+                </dl>
+                <dl>
+                    <dt>支付方式</dt>
+                    <dd><a href="#">货到付款</a></dd>
+                    <dd><a href="#">在线支付</a></dd>
+                    <dd><a href="#">分期付款</a></dd>
+                    <dd><a href="#">邮局汇款</a></dd>
+                    <dd><a href="#">公司转账</a></dd>
+                </dl>
+                <dl>
+                    <dt>售后服务</dt>
+                    <dd><a href="#">售后政策</a></dd>
+                    <dd><a href="#">价格保护</a></dd>
+                    <dd><a href="#">退款说明</a></dd>
+                    <dd><a href="#">返修/退换货</a></dd>
+                    <dd><a href="#">取消订单</a></dd>
+                </dl>
+                <dl>
+                    <dt>特色服务</dt>
+                    <dd><a href="#">夺宝岛</a></dd>
+                    <dd><a href="#">DIY装机</a></dd>
+                    <dd><a href="#">延保服务</a></dd>
+                    <dd><a href="#">品优购E卡</a></dd>
+                    <dd><a href="#">品优购通信</a></dd>
+                </dl>
+                <dl>
+                    <dt>帮助中心</dt>
+                    <img src="images/6.png"/>
+                    <p>臻尚客户端</p>
+                </dl>
+            </div>
+            <div class="mod_copyright">
+                <div class="links">
+                    <ul>
+                        <li>
+                            <a href="#">关于我们</a>
+                        </li>
+                        <li></li>
+                        <li>
+                            <a href="#">联系我们</a>
+                        </li>
+                        <li></li>
+                        <li>
+                            <a href="#">联系客服</a>
+                        </li>
+                        <li></li>
+                        <li>
+                            <a href="#">合作招商</a>
+                        </li>
+                        <li></li>
+                        <li>
+                            <a href="#">商家帮助</a>
+                        </li>
+                        <li></li>
+                        <li>
+                            <a href="#">营销中心</a>
+                        </li>
+                        <li></li>
+                        <li>
+                            <a href="#">手机臻尚</a>
+                        </li>
+                        <li></li>
+                        <li>
+                            <a href="#">友情链接</a>
+                        </li>
+                        <li></li>
+                        <li>
+                            <a href="#">销售联盟</a>
+                        </li>
+                        <li></li>
+                        <li>
+                            <a href="#">臻尚社区</a>
+                        </li>
+                        <li></li>
+                        <li>
+                            <a href="#">风险监测</a>
+                        </li>
+                        <li></li>
+                        <li>
+                            <a href="#">隐私政策</a>
+                        </li>
+                        <li></li>
+                        <li>
+                            <a href="#">臻尚公益</a>
+                        </li>
+                        <li></li>
+                        <li>
+                            <a href="#">English Site</a>
+                        </li>
+                        <li></li>
+                        <li>
+                            <a href="#">Media & IR</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="copy_right">
+                   <p>
+                    地址：河南省信阳市潢川县双柳树镇友谊街 邮编：100096 电话：400-618-4000 传真：010-82935100 邮箱: 669638556@qq.com<br>
+                    京ICP备08001421号京公网安备110108007702
+                   </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,338 @@
+/* main    部分 */
+.w .main{
+    /* 一定要加高度   不然main下面的样式会失去 例如： 边框 */
+    height: 455px;
+    width: 980px;
+    margin-left: 220px;
+    padding-top: 10px;
+    
+}
+.w .main .focus{
+    position: relative;
+    width: 720px;
+    height: 455px;
+    float: left;
+    /* 将图片隐藏 */
+    overflow: hidden;
+    
+}
+.w .main .focus ul{
+    position: absolute;
+    height: 455px;
+    left: 0;
+}
+/* 设置跳转锚点的样式 */
+.w .main .focus #navDiv{
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+}
+.w .main .focus #navDiv a{
+    /* 内联标签设置浮动后   就可以设置宽高了 */
+    float: left;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+    background: #6f6f70;
+    opacity: 0.5;
+}
+.w .main .focus #navDiv a:hover{
+    background: #ffffff;
+}
+.w .main .focus ul li{
+    float: left;
+}
+.w .main .focus ul li a img{
+    width: 720px;
+    height: 455px;
+}
+.w .main .newflash{
+    width: 250px;
+    height: 455px;
+    
+    float: right;
+}
+.w .main .newflash .news{
+    height: 165px;
+    border: 1px solid #e4e4e4;
+}
+.w .main .newflash .news .news_hd{
+    height: 33px;
+    border-bottom: 1px dotted #e4e4e4;
+    line-height: 33px;
+}
+.w .main .newflash .news .news_hd span{
+    float: left;
+    font-size: 14px;
+    padding-left: 15px;
+}
+.w .main .newflash .news .news_hd a{
+    float: right;
+    padding-right: 15px;
+}
+ /* 声明字体图标    注意路径*/
+ @font-face {
+    font-family: 'icomoon';
+    src:  url('../icomoon.eot?tomleg');
+    src:  url('../fonts/icomoon.eot?tomleg#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?tomleg') format('truetype'),
+      url('../fonts/icomoon.woff?tomleg') format('woff'),
+      url('../fonts/icomoon.svg?tomleg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+.w .main .newflash .news .news_hd a::after{
+    font-family: 'icomoon';
+    content: "\e920";
+    padding-left: 5px;
+}
+.w .main .newflash .news .news_bd ul li mark{
+    background: #fdeeed;
+    color: #f19792;
+    border-radius: 3px;
+    padding: 5px;
+    text-align: center;
+    margin-right: 5px;
+    
+}
+.w .main .newflash .news .news_bd ul li{
+    height: 24px;
+    line-height: 24px;
+    /* padding: 2px 0 2px 0; */
+}
+.w .main .newflash .news .news_bd{
+    padding: 5px 15px 0;
+}
+.w .main .newflash .lifeservice{
+    height: 209px;
+    /* margin-top: 3px; */
+}
+.w .main .newflash .lifeservice ul{
+    display: grid;
+    height: 209px;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(3,1fr);
+}
+
+
+/* 引入阿里巴巴中的彩色图标 */
+.icon {
+    width: 40px;
+    height: 40px;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+  }
+  
+.w .main .newflash .lifeservice ul li{
+    text-align: center;
+    transition: 1s;
+  } 
+  /* 设置css动态样式 */
+.w .main .newflash .lifeservice ul li:hover{
+    transform: translateZ(10px);
+  }
+/* 给父容器添加景深  让其看起来有3d  效果 */
+.w .main .newflash .lifeservice ul{
+    perspective: 500px;
+}
+.w .main .newflash .bargain{
+    margin-top: 5px;
+    transition: 1s;
+}
+/* 为bargin  设置css动态样式 */
+.w .main .newflash .bargain:hover{
+    transform: translateZ(30px);
+    box-shadow: 0 0 5px 3px lightblue;
+}
+
+/* 推荐模块———————————————————————————————————————————————— */
+.recom{
+    height: 163px;
+    margin-top: 12px;
+}
+.recom .recom_hd{
+    float: left;
+    width: 205px;
+    height: 163px;
+    background: #5c5251;
+    padding-top: 30px;
+    text-align: center;
+}
+.recom .recom_bd{
+    float: left;
+    background-color: #ebebeb;
+    /* border: 1px solid #ccc; */
+    /* margin-left: 1px; */
+}
+.recom .recom_bd ul li{
+    float: left;
+    position: relative;
+}
+.recom .recom_bd ul li img{
+    width: 248px;
+    height: 163px;
+    transition: 0.5s;
+}
+/* 为图片加css动态样式 */
+.recom .recom_bd ul li img:hover{
+    transform: translateZ(30px);
+    box-shadow: 0 0 5px 3px #ccc;
+    /* 提高层级 */
+    position: relative;
+    z-index: 1;
+}
+/* 利用伪元素添加竖线     只有前三个li加   n + 3 是从第三个往后面选   而-n就是往前选*/
+.recom .recom_bd ul li:nth-child(-n + 3)::after{
+    width: 1px;
+    height: 145px;
+    background: #ddd;
+    /* 一定要加 */
+    content: "";
+    /* display: block; */
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+/* 将每一个楼层与上一个楼层都加一个30px距离 */
+.floor .w{
+    margin-top: 30px;
+}
+.floor /* .first */ .box_hd{
+    height: 30px;
+    border-bottom: 2px solid #c81623;
+}
+.floor /* .first */ .box_hd h3{
+    float: left;
+    font-size: 18px;
+    color: #c81623;
+    font-weight: 400;
+}
+/* 这个浮动一定要加  防止li加浮动后反向 */
+.floor /* .first */ .box_hd .tab_list{
+    float: right;
+}
+.floor /* .first */ .box_hd .tab_list ul li{
+    float: left;
+    line-height: 30px;
+}
+.floor /* .first  */.box_hd .tab_list ul li a{
+    padding: 0 15px;
+}
+.floor /* .first  */.box_bd{
+    height: 361px;
+    
+}
+.floor /* .first */ .box_bd .tab_content .tab_list_item1 div{
+    float: left;
+    height: 361px;
+}
+.floor /* .first */ .box_bd .tab_content .tab_list_item1 .col_210{
+    width: 210px;
+    background: #f9f9f9;
+    text-align: center;
+}
+.floor /* .first  */.box_bd .tab_content .tab_list_item1 .col_210 ul li{
+    float: left;
+    height: 34px;
+    width: 85px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    line-height: 33px;
+    margin-right: 10px;
+}
+/* 添加css动态样式 */
+.floor /* .first  */.box_bd .tab_content .tab_list_item1 .col_210 ul a img{
+    
+    transition: .5s;
+
+}
+.floor /* .first  */.box_bd .tab_content .tab_list_item1 .col_210 ul a img:hover{
+    transform: translate(-5px,0);
+}
+.floor /* .first */ .box_bd .tab_content .tab_list_item1 .col_210 ul{
+    padding-left: 12px;
+}
+.col_329{
+    width: 329px;
+    
+}
+/* 添加动态样式 */
+.col_329 a img{
+    transition: .5s;
+}
+.col_329 a img:hover{
+    transform: translate(5px,0);
+}
+.col_221{
+    width: 221px;
+    border-right: 1px solid #ccc;
+    
+}
+/* 动态样式 */
+.col_221 a img{
+    transition: .5s;
+}
+.col_221 a img:hover{
+    transform: translate(0,-5px);
+}
+.col_221 .bb img:hover{
+    transform: translate(0,5px);
+}
+.col_221 .rightmove{
+    perspective: 50px;
+    
+}
+.col_221 .rightmove img{
+    transition: .5s;
+}
+.col_221 .rightmove img:hover{
+    transform: translateZ(10px);
+    box-shadow: 0 0 10px 5px #ccc;
+}
+.col_219{
+    width: 219px;
+}
+/* 动态样式 */
+.col_219 a img{
+    transition: .5s;
+}
+.col_219 a img:hover{
+    transform: translate(0,-5px);
+}
+.col_219 .bb img:hover{
+    transform: translate(0,5px);
+}
+.floor /* .first */ .box_bd .tab_content .tab_list_item1 .bb{
+    border-bottom: 1px solid #ccc;
+    display: inline-block;
+}
+
+
+/* aside制作—————————————————————————————————————————————————————————————— */
+.aside ul li{
+    width: 85px;
+    height: 42px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    line-height: 42px;
+    
+}
+.aside ul{
+    position: fixed;
+    top: 126px;
+    right: 1365px;
+    background: white;
+}
+.aside ul .back_red{
+    background: #c81623;
+    
+}
+.aside ul .back_red a{
+    color: white;
+}
+.aside ul .back_red a:hover{
+    color: white;
+}
